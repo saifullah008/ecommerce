@@ -21,6 +21,7 @@ function CartPage() {
   const [address, setAddress] = useState("");
   const [pincode, setPincode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [cod, setCod] = useState(false);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     let temp = 0;
@@ -43,6 +44,7 @@ function CartPage() {
       address,
       pincode,
       phoneNumber,
+      cod,
     };
 
     console.log(addressInfo);
@@ -123,15 +125,6 @@ function CartPage() {
                 setName(e.target.value);
               }}
             />
-            <input
-              type="text"
-              className="form-control"
-              placeholder="name"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
             <textarea
               className="form-control"
               rows={3}
@@ -142,6 +135,16 @@ function CartPage() {
                 setAddress(e.target.value);
               }}
             />
+            <input
+              type="radio"
+              className="radio-inline"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="option1"
+              required
+              onClick={() => setCod(true)}
+            />{" "}
+            Paymend mode(COD)
             <input
               className="form-control"
               placeholder="pincode"
@@ -160,8 +163,6 @@ function CartPage() {
                 setPhoneNumber(e.target.value);
               }}
             />
-            <input type="radio" className="form-control" value="COD" required />
-            paymrnt mode
             <hr />
           </div>
         </Modal.Body>

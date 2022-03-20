@@ -14,7 +14,7 @@ function HomePage() {
   const { cartItems } = useSelector((state) => state.cartItems);
   const [loading, setLoading] = useState(false);
   const [searchKey, setSearchKey] = useState("");
-  const [filterType, setFilterType] = useState("");
+  const [filterkey, setFilterkey] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -54,14 +54,21 @@ function HomePage() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const tempSearch =
-    searchKey.length > 2
-      ? data.filter((obj) => obj.name.toLowerCase().includes(searchKey))
-      : data;
+  // const tempSearch =
+  //   searchKey.length > 2
+  //     ? data.filter((obj) => obj.name.toLowerCase().includes(searchKey))
+  //     : data;
   // const tempFilter = data.filter((obj) =>
   //   obj.category.toLowerCase().includes(filterType)
   // );
   //console.log(data[0].category);
+  let filterSeacrh = data.filter((obj) =>
+    obj.category.toLowerCase().includes(filterkey)
+  );
+  let tempSearch =
+    searchKey.length > 2
+      ? filterSeacrh.filter((obj) => obj.name.toLowerCase().includes(searchKey))
+      : filterSeacrh;
   return (
     <div>
       <Layout loading={loading}>
@@ -78,14 +85,14 @@ function HomePage() {
             />
             <select
               className="form-control mt-3 ml-3"
-              value={filterType}
+              value={filterkey}
               onChange={(e) => {
-                setFilterType(e.target.value);
+                setFilterkey(e.target.value);
               }}
             >
               <option value="">All</option>
               <option value="electronics">Electronics</option>
-              <option value="autoparts">Auto-Parts</option>
+              <option value="auto-parts">Auto-Parts</option>
               <option value="fashion">Fashion</option>
               <option value="accessories">Accessories</option>
               <option value="grocery">Grocery</option>
