@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./stylesheet/layout.css";
 import "./stylesheet/product.css";
+import "./stylesheet/authentication.css";
 
 function App() {
   return (

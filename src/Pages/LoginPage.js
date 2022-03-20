@@ -28,7 +28,7 @@ function LoginPage() {
       {loading && <Loader />}
       <div className="row justify-content-center">
         <div className="col-md-4 z1">
-          <div className="login-form">
+          <div className="login-form ">
             <h2>Login</h2>
 
             <hr />
@@ -68,8 +68,6 @@ function LoginPage() {
             src="https://assets7.lottiefiles.com/packages/lf20_yr6zz3wv.json"
             background="transparent"
             speed="1"
-            loop
-            autoplay
           ></lottie-player>
         </div>
       </div>

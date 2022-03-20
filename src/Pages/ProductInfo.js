@@ -1,52 +1,3 @@
-// import React from "react";
-// import Layout from "../components/Layout";
-// import fireDB from "../fireConfig";
-// import { getDoc, doc } from "firebase/firestore";
-// import { useEffect, useState } from "react";
-// import { useParams } from "react-router";
-
-// function ProductInfo() {
-//   const [product, setProduct] = useState();
-//   const [loading, setLoading] = useState(false);
-//   const params = useParams();
-
-//   useEffect(() => {
-//     getData();
-//   }, []);
-
-//   async function getData() {
-//     try {
-//       setLoading(true);
-//       const productTemp = await getDoc(
-//         doc(fireDB, "products", params.productid)
-//       );
-
-//       setProduct(productTemp.data());
-//       setLoading(false);
-//     } catch (error) {
-//       console.log(error);
-//       setLoading(false);
-//     }
-//   }
-//   return (
-//     <div>
-//       <Layout loading={loading}>
-//         <h1>Product Info</h1>
-//         {product && (
-//           <div>
-//             <p>
-//               <b>{product.name}</b>
-//             </p>
-//             <img src={product.imageUrl} />
-//           </div>
-//         )}
-//       </Layout>
-//     </div>
-//   );
-// }
-
-// export default ProductInfo;
-
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { getDoc, doc } from "firebase/firestore";
@@ -57,7 +8,7 @@ function ProductInfo() {
   const [product, setProduct] = useState();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.cartReducer);
+  const { cartItems } = useSelector((state) => state.cartItems);
   const params = useParams();
   useEffect(() => {
     getData();
@@ -96,10 +47,11 @@ function ProductInfo() {
                 </p>
                 <img src={product.imageUrl} className="product-info-img" />
                 <hr />
-                {
-                  //<p>{product.description}</p>
-                }
-                <div className="d-flex justify-content-end my-3">
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout
+                </p>
+                <div className="d-flex justify-content-center my-3">
                   <button onClick={() => addToCart(product)}>
                     ADD TO CART
                   </button>

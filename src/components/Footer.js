@@ -3,9 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div className="footer">
-      <p>Designed and dveloped by</p>
-      <hr />
-      <p>Saif</p>
+      <p class="d-flex justify-content-end "></p>
     </div>
   );
 }

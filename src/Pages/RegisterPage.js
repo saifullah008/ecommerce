@@ -1,21 +1,3 @@
-// import React from "react";
-
-// function RegisterPage() {
-//   return (
-//     <div>
-//       <h1>RegisterPage</h1>
-//       <lottie-player
-//         src="https://assets10.lottiefiles.com/packages/lf20_h7ofe9pc.json"
-//         background="transparent"
-//         speed="1"
-//         loop
-//         autoplay
-//       ></lottie-player>
-//     </div>
-//   );
-// }
-
-// export default RegisterPage;
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -56,11 +38,9 @@ function RegisterPage() {
       <div className="row justify-content-center">
         <div className="col-md-5">
           <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_h7ofe9pc.json"
+            src="https://assets1.lottiefiles.com/packages/lf20_h7ofe9pc.json"
             background="transparent"
             speed="1"
-            loop
-            autoplay
           ></lottie-player>
         </div>
 
